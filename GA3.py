@@ -315,7 +315,7 @@ def docs_similarity_api_endpoint():
         "http://127.0.0.1:8000/similarity" during development or a deployed URL when published.
     """
 
-    return "https://tds-project-2-ga-3-7.vercel.app/similarity"
+    return "https://tds-project2-ga-3-q7.vercel.app/similarity"
 
 # ====================================================================================================================
 
@@ -381,7 +381,7 @@ def employee_queries_api_endpoint():
         "http://127.0.0.1:8000/execute", or a deployed URL like "https://tds-project-2-ga-3-8.vercel.app/execute".
     """
 
-    return "https://tds-project-2-ga-3-8.vercel.app/execute"
+    return "https://tds-proj2-ga3-q8.vercel.app/execute"
 
 # ====================================================================================================================
 
@@ -412,11 +412,11 @@ if __name__ == "__main__":
     print(generate_openai_address_request(fields))
 
     print("=================Q4====================")
-    image_path = "daniel.png"  # Replace with your image file path
+    image_path = "download.png"  # Replace with your image file path
     print(base64_encoding(image_path))
 
     print("=================Q5====================")
-    messages = ["Dear user, please verify your transaction code 10389 sent to daniel.putta@gramener.com","Dear user, please verify your transaction code 33454 sent to daniel.putta@gramener.com"]
+    messages = ["Dear user, please verify your transaction code 65250 sent to lisa.miranda@gramener.com","Dear user, please verify your transaction code 51067 sent to lisa.miranda@gramener.com"]
     print(generate_embedding_request(messages))
 
     print("=================Q6====================")
