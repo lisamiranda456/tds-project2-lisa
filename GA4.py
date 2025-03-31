@@ -135,7 +135,7 @@ def country_outline_api_endpoint():
     Returns:
         str: The URL of the API endpoint where users can request structured country outlines.
     """
-    return "https://tds-project-2-ga-4-3.vercel.app/api/outline"
+    return "https://tds-project2-ga4-q3.vercel.app/api/outline"
 
 # ====================================================================================================================
 
@@ -395,7 +395,7 @@ def create_github_action_workflow(email_id):
     """
 
     token = os.environ.get("ACCESS_TOKEN")
-    repo_name = "danielrayappa2210/TDA-Project-2---GA4-8"
+    repo_name = "lisamiranda456/tds-project2-ga4-q8"
     
     if not token or not repo_name:
         raise ValueError("Both GITHUB_TOKEN and REPO_NAME environment variables must be set.")
@@ -456,7 +456,7 @@ jobs:
         else:
             # Re-raise the exception if it's an unexpected error
             raise
-    return "https://github.com/danielrayappa2210/TDA-Project-2---GA4-8"
+    return "https://github.com/lisamiranda456/tds-project2-ga4-q8"
 
 # ====================================================================================================================
 
