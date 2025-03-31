@@ -22,6 +22,7 @@ WORKDIR /app
 
 # Copy the entire project into /app, preserving the project structure
 COPY . /app
+RUN chmod +x /app/ffmpeg-7.0.2-amd64-static/ffmpeg
 
 # Install Python dependencies using the requirements.txt file
 RUN pip install --no-cache-dir -r requirements.txt
