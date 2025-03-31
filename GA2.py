@@ -108,7 +108,7 @@ def update_index_html(email):
         raise EnvironmentError("ACCESS_TOKEN environment variable is not set.")
     
     # Hard-coded settings
-    repo_name = "danielrayappa2210/TDS-GA2"  # Replace with your GitHub username and repository name
+    repo_name = "lisamiranda456/tds-ga2"  # Replace with your GitHub username and repository name
     branch = "main"
     file_path = "index.html"
     
@@ -124,7 +124,7 @@ def update_index_html(email):
     commit_message = "Update index.html via Python script"
     update_response = repo.update_file(file.path, commit_message, new_content, file.sha, branch=branch)
     
-    return "https://danielrayappa2210.github.io/TDS-GA2/"
+    return "https://lisamiranda456.github.io/tds-ga2/"
 
 # ====================================================================================================================
 
@@ -183,12 +183,12 @@ def deploy_to_vercel(json_filepath):
         str: The deployed Vercel API URL or None if deployment fails."
     """
 
-    github_repo = "danielrayappa2210/TDS-Project-2---datastore"
+    github_repo = "lisamiranda456/tds-project2-datastore"
     json_file = "q-vercel-python.json"
     github_branch = "main"
     access_token = os.getenv("ACCESS_TOKEN")
     vercel_token = os.getenv("VERCEL_TOKEN")
-    fixed_vercel_url = "https://tds-project-2-ga-2-6-vercel.vercel.app/api"
+    fixed_vercel_url = "https://tds-project2-ga2-q6-vercel.vercel.app/api"
 
     if not access_token or not vercel_token:
         print("Missing GitHub or Vercel token")
@@ -241,10 +241,9 @@ def update_and_trigger_workflow(email):
         str: The GitHub repository URL where the action is created.
     """
 
-    owner, repo, path, branch = "danielrayappa2210", "TDS", ".github/workflows/main.yml", "main"
+    owner, repo, path, branch = "lisamiranda456", "tds", ".github/workflows/main.yml", "main"
     token = os.getenv("ACCESS_TOKEN")
     if not token: return print("Missing ACCESS_TOKEN")
-
     headers = {"Authorization": f"Bearer {token}", "Accept": "application/vnd.github.v3+json"}
     file_url = f"https://api.github.com/repos/{owner}/{repo}/contents/{path}"
 
@@ -289,7 +288,7 @@ def build_and_push_image(tag):
         str: The URL of the pushed image on Docker Hub.
     """
 
-    repo_name = "danielrayappa2210/TDS-Project-2---GA2-8---Dockerhub" #replace with your repo name
+    repo_name = "lisamiranda456/tds-project2-ga2-q8-dockerhub" #replace with your repo name
     github_token = os.environ.get("ACCESS_TOKEN") #Get token from env variable.
 
     try:
@@ -305,7 +304,7 @@ def build_and_push_image(tag):
         # Update the tags line
         for step in yaml_content["jobs"]["build-and-push"]["steps"]:
             if step.get("uses") == "docker/build-push-action@v3":
-                step["with"]["tags"] = f"danielrayappa/tdsga:{tag}"
+                step["with"]["tags"] = f"lisamiranda456/tdsga:{tag}"
 
         # Write the updated YAML content back
         updated_yaml = yaml.dump(yaml_content, default_flow_style=False)
@@ -318,7 +317,7 @@ def build_and_push_image(tag):
             branch="main", #Or whatever branch your workflow is on.
         )
         time.sleep(20)
-        return "https://hub.docker.com/repository/docker/danielrayappa/tdsga/general"
+        return "https://hub.docker.com/repository/docker/lisamiranda456/tdsga/general"
 
     except Exception as e:
         return None
@@ -335,12 +334,12 @@ def deploy_fastapi(csv_filepath):
         str: The deployed API URL or None if deployment fails.
     """
 
-    github_repo = "danielrayappa2210/TDS-Project-2---datastore"
+    github_repo = "lisamiranda456/tds-project2-datastore"
     csv_file = "q-fastapi.csv"
     github_branch = "main"
     access_token = os.getenv("ACCESS_TOKEN")
     vercel_token = os.getenv("VERCEL_TOKEN")
-    fixed_vercel_url = "https://tds-project-2-ga-2-9-fastapi.vercel.app/api"
+    fixed_vercel_url = "https://tds-project2-ga2-q9-fastapi.vercel.app/api"
 
     if not access_token or not vercel_token:
         print("Missing GitHub or Vercel token")
@@ -406,12 +405,12 @@ if __name__ == "__main__":
     print(data_uri)
 
     print("=================Q3====================")
-    email = "daniel.putta@gramener.com"
+    email = "lisa.miranda@gramener.com"
     gh_page_url = update_index_html(email)
     print(gh_page_url)
 
     print("=================Q4====================")
-    email = "daniel.putta@gramener.com"
+    email = "lisa.miranda@gramener.com"
     print(run_colab_authentication(email))
 
     print("=================Q5====================")
